@@ -5,3 +5,4 @@ function startQuiz(quizType) {
     window.location.href = `./javaQuiz/${quizType}-quiz.html`; // Assumes pages are named quiz-java.html, quiz-python.html, etc.
     
 }
+

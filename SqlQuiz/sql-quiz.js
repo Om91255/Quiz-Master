@@ -5,14 +5,25 @@ let totalQuestions = 0;
 // Function to fetch questions from the API
 async function fetchQuestions() {
     try {
-        const response = await fetch('http://localhost:8080/api/questions'); // API URL
+        const response = await fetch('http://localhost:8092/api/sqlquestion'); // API URL
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         questions = await response.json(); // Assume API returns an array of question objects
 
-        // Limit to the first 5 questions
-        questions = questions.slice(31, 130); // Take only the first 5 questions
+        if (!Array.isArray(questions)) {
+            throw new Error('API did not return a valid array');
+        }
+
+        // Transform API data if needed
+        questions = questions.map(q => ({
+            questionText: q.questionText,
+            options: q.sqloptions || [], // Default to empty array if options are missing
+            correctAnswer: q.correctAnswer
+        }));
+
+        // Limit to the first 10 questions
+        questions = questions.slice(0, 10); 
         totalQuestions = questions.length; // Set totalQuestions based on fetched data
         document.getElementById('total-questions').textContent = totalQuestions; // Update the total questions in the HTML
         displayQuestion(); // Display the first question
@@ -21,7 +32,7 @@ async function fetchQuestions() {
         document.getElementById('question-text').textContent = "Failed to load questions. Please try again.";
     }
 }
-let time = 60 * 60;
+let time = 5 * 60;
 
         const countdown = setInterval(() => {
             const minutes = Math.floor(time / 60);

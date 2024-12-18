@@ -6,14 +6,25 @@ let totalQuestions = 0; // This will be set dynamically based on the API respons
 // Function to fetch questions from the API
 async function fetchQuestions() {
     try {
-        const response = await fetch('http://localhost:8080/api/questions'); // API URL
+        const response = await fetch('http://localhost:8092/api/pyquestion'); // API URL
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         questions = await response.json(); // Assume API returns an array of question objects
 
+        if (!Array.isArray(questions)) {
+            throw new Error('API did not return a valid array');
+        }
+
+        // Transform API data if needed
+        questions = questions.map(q => ({
+            questionText: q.questionText,
+            options: q.pyoptions || [], // Default to empty array if options are missing
+            correctAnswer: q.correctAnswer
+        }));
+
         // Limit to the first 5 questions
-        questions = questions.slice(10, 20); // Take only the first 5 questions
+        questions = questions.slice(0, 10); // Take only the first 5 questions
         totalQuestions = questions.length; // Set totalQuestions based on fetched data
         document.getElementById('total-questions').textContent = totalQuestions; // Update the total questions in the HTML
         displayQuestion(); // Display the first question

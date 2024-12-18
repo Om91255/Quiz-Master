@@ -7,14 +7,27 @@ let totalQuestions = 0;
 // Function to fetch questions from the API
 async function fetchQuestions() {
     try {
-        const response = await fetch('http://localhost:8097/api/questions'); // API URL
+        const response = await fetch('http://localhost:8091/api/questions'); // API URL
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         questions = await response.json(); // Assume API returns an array of question objects
+      
+        
+        if (!Array.isArray(questions)) {
+        throw new Error('API did not return a valid array');
+        }
 
+        // Transform API data if needed
+        questions = questions.map(q => ({
+            questionText: q.questionText,
+            options: q.options || [], // Default to empty array if options are missing
+            correctAnswer: q.correctAnswer
+        }));
         
         questions = questions.slice(0, 10); 
+        console.log(questions);
+        
         totalQuestions = questions.length; 
         document.getElementById('total-questions').textContent = totalQuestions; // Update the total questions in the HTML
         displayQuestion(); // Display the first question
