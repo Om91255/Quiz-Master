@@ -7,7 +7,7 @@ let totalQuestions = 0;
 // Function to fetch questions from the API
 async function fetchQuestions() {
     try {
-        const response = await fetch('http://localhost:8091/api/questions'); // API URL
+        const response = await fetch('http://localhost:8092/api/questions'); // API URL
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

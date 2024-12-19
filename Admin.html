@@ -3,11 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin : Home</title>
+    <link rel="stylesheet" href="./Admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
 
-    <h1>main admin hu..</h1>
+<body>
     
+    
+    <nav class="nav">
+
+        <div class="home">
+            <i class="fa-solid fa-house" style="color: #f4f5f6;"></i>
+            
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><p><button onclick="location.href='./index.html'"><h3>Home</h3></button></p></li>
+            </ul>
+        </div>
+       
+
+        <div class="setting-contact-btn" id="newBook">
+
+            <div class="setting-btn">
+                <button><i class="fa-solid fa-gear" style="color: #050505;"></i> <p>Setting</p></button>
+            </div>
+
+            <div class="contact-btn">
+                <button><i class="fa-solid fa-address-book" style="color: #050505;"></i> <p>Contact us</p></button>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <main>
+
+        <div class="admin-container">
+
+            <button class="java card" onclick="location.href='./JavaQuiz/AddJavaQuestion.html'">
+                <div class="icon"><i class="fa-brands fa-java" style="color: #f70808;"></i></i></div>
+                <h3 style="color: #f70808;">Java</h3>
+                <h3>-------</h3>
+            </button>
+
+            <button class="Java Script card" onclick="location.href='./JavaScriptQuiz/AddjsQuestion.html'">
+                <div class="icon"><i class="fa-brands fa-js" style="color: #b9bb30;"></i></div>
+                <h3>Java Script</h3>
+                <h3>--------------</h3>
+            </button>
+
+            <button class="Python card" onclick="location.href='./PythonQuiz/AddPythonQuestion.html'">
+                <div class="icon"><i class="fa-brands fa-python"></i></div>
+                <h3>Python</h3>
+                <h3>----------</h3>
+            </button>
+
+            <button class="Python card" onclick="location.href='./SqlQuiz/AddSqlQuestion.html'">
+                <div class="icon"><i class="fa-solid fa-database" style="color: #0e42dd;"></i></div>
+                <h3>SQL</h3>
+                <h3>-----------</h3>
+            </button>
+
+        </div>
+
+    </main>
+
 </body>
+
 </html>

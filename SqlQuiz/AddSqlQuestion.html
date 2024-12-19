@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin : Home</title>
+    <link rel="stylesheet" href="../AddJavaQuestion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    
+    <main>
+
+        <section class="java-question" id="home">
+            <div class="wraper">
+                <h2 style="margin-left: 610px;padding-top: 20px;">Add SQL Question</h2>
+                <div class="flex">
+                    <form id="questionForm" style="height: 400px;">
+                        <label for="questionText">Question Text:</label><br>
+                        <textarea id="questionText" name="questionText" rows="3"  required></textarea><br><br>
+                
+                        <label for="correctAnswer">Correct Answer:</label><br>
+                        <input type="text" id="correctAnswer" name="correctAnswer" required><br><br>
+                
+                        <h3>Options : </h3><br>
+                        <div id="optionsContainer">
+                            <div class="option-group">
+                                <input type="text" class="option-input" placeholder="Option 1" required>
+                            </div>
+                        </div>
+
+                        <div class="btns">
+                            <button type="button" onclick="addOption()">Add Option</button>
+                            <button type="button" onclick="location.href='../Admin.html'">Home</button>
+                        </div>
+
+                        <button type="submit" class="submit">Submit Question</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+
+    </main>
+
+    <script src="./AddSqlQuestion.js"></script>
+</body>
+</html>

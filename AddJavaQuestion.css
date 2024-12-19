@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(213, 218, 223, 0.952);
+}
+
+
+
+
+.java-question {
+    background: white url(./images/bg.jpg) no-repeat scroll center;
+    height: 100vh;
+    background-size: cover;
+    color: white;
+}
+
+.java-question .wraper {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 70px;
+    height: 100%;
+}
+
+form{
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input{
+    font-size: 15px;
+    color: white;
+    padding: 5px;
+    width: 250px;
+    outline: none;
+    background-color: transparent;
+    border: 3px solid  rgb(44 76 108);
+    border-radius: 5px;
+}
+
+textarea{
+    text-decoration: none;
+    outline: none;
+    width: 250px;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    border: 3px solid  rgb(44 76 108);
+    border-radius: 5px;
+}
+
+.option-input{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btns{
+    display: flex;
+    flex-direction: row;
+    gap: 34px;
+}
+
+button{
+    background-color:  #28a745;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+     padding: 10px 20px;
+    border: 3px solid   #28a745;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 20px;
+}
+button:hover{
+    color: black;
+    cursor: pointer;
+}
+.submit{
+    width: 250px;
+    background-color:  #bb241f;
+    border: 3px solid  #bb241f;
+}
